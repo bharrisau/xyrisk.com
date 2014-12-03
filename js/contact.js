@@ -34,7 +34,9 @@ $(function() {
                 minlength: "Your message must consist of at least 2 characters"
             }
         },
-        submitHandler: function(form) {
+        submitHandler: function(form, event) {
+          event.preventDefault();
+
           var data = {};
           data.name = $("#name").val();
           data.email = $("#email").val();
