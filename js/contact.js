@@ -44,7 +44,13 @@ $(function() {
           data.message = $("#message").val();
 
           var comment = new CommentObject();
-          comment.save(data, {
+
+          comment.set("name", $("#name").val());
+          comment.set("email", $("#email").val());
+          comment.set("phone", $("#phone").val());
+          comment.set("message", $("#message").val());
+
+          comment.save(null, {
             success: function() {
                 $('#contact :input').attr('disabled', 'disabled');
                 $('#contact').fadeTo( "slow", 0.15, function() {
